@@ -1,0 +1,35 @@
+<h1>User profile</h1>
+
+<p>
+	<strong>Name:</strong>
+	<%= @user.fname %>
+	<%= @user.lname %>
+</p>
+
+<p>
+	<strong>Email:</strong>
+	<%= @user.email %>
+</p>
+
+<p>
+	<strong>Password:</strong>
+	<%= @user.password %>
+</p>
+
+<h2>Posts</h2>
+	<% @user.posts.each do |post| %>
+		<p>
+			<strong>Title:</strong>
+			<%= post.title %><br>
+			<strong>Body:</strong>
+			<%= post.body%><br>
+			<%= link_to 'Edit this post', edit_user_post_path(@user, post) %>
+			<%= link_to 'Delete', user_post_path(@user, post), method: :delete %><br><br>
+		<p>
+	<% end %>
+
+<h2><%= link_to 'Write a new post', new_user_post_path(@user) %></h2>
+
+<p>
+	<%= link_to 'Edit Profile', edit_user_path(@user) %>
+</p>
