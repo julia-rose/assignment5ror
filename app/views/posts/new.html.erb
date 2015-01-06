@@ -1,6 +1,6 @@
 <h1>Write a new post</h1>
 
-<%= form_for([@user, @user.posts.build]) do |f| %>
+<%= form_for([@user, @user.posts.build]) do |f| %> <!-- you should be able to user form_for [@user, @post] here -->
 
 	<p>
 		<%= f.label :title %>
