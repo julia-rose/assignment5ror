@@ -24,7 +24,7 @@
 			<strong>Body:</strong>
 			<%= post.body%><br>
 			<%= link_to 'Edit this post', edit_user_post_path(@user, post) %>
-			<%= link_to 'Delete', user_post_path(@user, post), method: :delete %><br><br>
+			<%= link_to 'Delete', user_post_path(@user, post), method: :delete %><br><br> <!-- Check your routes, i think it should be user_posts_path() -->
 		<p>
 	<% end %>
 
